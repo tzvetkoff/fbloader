@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>LocTime</title>
+  <title>fbLoader</title>
   <link rel="stylesheet" type="text/css" media="screen, projection" href="<?php echo $root ?>/stylesheets/main.css" />
   <script type="text/javascript">
     var root = '<?= dirname($_SERVER['SCRIPT_NAME']); ?>';

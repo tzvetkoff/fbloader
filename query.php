@@ -14,8 +14,8 @@ function d($what) {
   echo "\n";
 }
 
-// get query
-$url = isset($_GET['url']) ? $_GET['url'] : null;
+// get url
+$url = isset($_GET['__url']) ? $_GET['__url'] : null;
 if (!$url) {
   include __DIR__.'/index.php';
   exit;
@@ -25,7 +25,9 @@ if (!$url) {
 $url = str_replace('|', '/', $url);
 
 // add query string
-$url .= '?' . $_SERVER['QUERY_STRING'];
+$query = $_GET;
+unset($query['__url']);
+$url .= '?' . http_build_query($query);
 
 // go fetch!
 $ch = curl_init();
